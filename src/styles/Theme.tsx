@@ -31,6 +31,7 @@ export const fontValues = {
  *  Holds value of current theme for access in other files
  */
 export const themeValues = themeEarth;
+// export const themeValues = themeOcean;
 
 const fontSizeBase = '16px';
 
@@ -51,7 +52,10 @@ const ThemeStyles = () => {
         font-size: 62.5%;
         font-family: ${titleFont};
       }
-      #__next {
+      header,
+      main,
+      aside,
+      footer {
         padding: 13px;
       }
       body {
@@ -113,6 +117,10 @@ const ThemeStyles = () => {
       }
       h6 {
         font-size: 1em;
+      }
+      b,
+      strong {
+        color: ${colorFade};
       }
       small,
       sub,
@@ -194,6 +202,18 @@ const ThemeStyles = () => {
       textarea {
         width: 100%;
       }
+      textarea,
+      select,
+      input[type] {
+        color: ${colorText};
+        /* The 6px vertically centers text on FF, ignored by Webkit */
+        padding: 6px 10px;
+        background-color: ${colorBgAlt};
+        border: 1px solid ${colorBgAlt};
+        border-radius: 4px;
+        box-shadow: none;
+        box-sizing: border-box;
+      }
       .button,
       button,
       input[type='submit'],
@@ -239,19 +259,7 @@ const ThemeStyles = () => {
         color: ${colorBg};
         outline: 0;
       }
-      textarea,
-      select,
-      input[type] {
-        color: ${colorText};
-        /* The 6px vertically centers text on FF, ignored by Webkit */
-        padding: 6px 10px;
-        margin-bottom: 10px;
-        background-color: ${colorBgAlt};
-        border: 1px solid ${colorBgAlt};
-        border-radius: 4px;
-        box-shadow: none;
-        box-sizing: border-box;
-      }
+
       textarea:focus,
       select:focus,
       input[type]:focus {
@@ -275,6 +283,16 @@ const ThemeStyles = () => {
       }
       figcaption {
         font-weight: 700;
+      }
+      .fullwidth {
+        position: relative;
+        left: calc(calc(140ch - 100vw) / 2);
+        width: 100vw;
+      }
+      @media (max-width: 154ch) {
+        .fullwidth {
+          left: 0;
+        }
       }
     `}</style>
   );

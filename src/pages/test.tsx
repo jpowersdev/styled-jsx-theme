@@ -1,11 +1,52 @@
 import { themeValues } from '../styles/Theme';
 
+const ContactForm = () => {
+  return (
+    <>
+      <form id='contact-form' className='fullwidth'>
+        <label form='contact-form'>
+          <h3>Ask Us Your Questions</h3>
+        </label>
+        <input placeholder='Name' name='name' />
+        <input placeholder='Email' name='name' />
+        <input placeholder='Message' name='name' />
+        <input type='submit' value='submit' />
+      </form>
+      <style jsx>{`
+        form {
+          background: ${themeValues.colorBgAlt};
+          display: grid;
+          grid-template-columns: repeat(4, auto);
+          grid-template-rows: 8ch 2ch;
+          justify-content: center;
+          align-items: center;
+          grid-gap: 2ch;
+          padding: 1em 0 3em;
+        }
+        label {
+          text-align: center;
+          grid-column: 1 / -1;
+        }
+        input {
+          padding: 5px 10px;
+          margin-bottom: 0;
+        }
+      `}</style>
+    </>
+  );
+};
+
 function Test() {
   return (
     <>
       <header>
         <nav>
           <ul>
+            <li>
+              <figure>
+                <img src='/static/favicon.ico' alt='logo' />
+              </figure>
+            </li>
             <li>
               <a href='#'>Page</a>
             </li>
@@ -25,11 +66,24 @@ function Test() {
         </nav>
         <h1>Page Heading</h1>
       </header>
+      <aside>
+        <h3>Table of Contents</h3>
+        <nav>
+          <ul>
+            <li>
+              <a href='#article-1'>Article One</a>
+            </li>
+            <li>
+              <a href='#article-2'>Article Two</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
       <main>
         <section>
           <h2>Section Heading</h2>
-          <article>
-            <h3>Article Title</h3>
+          <article id='article-1'>
+            <h3>Article One</h3>
             <p>
               Praesent nec erat rutrum, malesuada libero in, tempus tortor.
               Aliquam eget cursus libero, non imperdiet odio. Phasellus
@@ -57,8 +111,8 @@ function Test() {
               accumsan nunc massa, at semper ipsum luctus eu.
             </p>
           </article>
-          <article>
-            <h3>Article Title</h3>
+          <article id='article-2'>
+            <h3>Article Two</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac
               ipsum interdum, rhoncus nunc quis, maximus est. Ut et aliquet
@@ -89,26 +143,8 @@ function Test() {
           </article>
         </section>
       </main>
-      <aside>
-        <h3>Table of Contents</h3>
-        <nav>
-          <ul>
-            <li>
-              <a href='#'>Nav Item</a>
-            </li>
-            <li>
-              <a href='#'>Nav Item</a>
-            </li>
-            <li>
-              <a href='#'>Nav Item</a>
-            </li>
-            <li>
-              <a href='#'>Nav Item</a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-      <div className='space'>CONTENT</div>
+
+      <ContactForm />
       <footer>
         <figure>
           <img src='/static/favicon.ico' alt='logo' />
@@ -147,7 +183,8 @@ function Test() {
         }
         header > nav > ul {
           display: flex;
-          justify-content: space-between;
+          align-items: center;
+          justify-content: space-around;
         }
         aside > nav > ul {
           padding-left: 0;
@@ -163,21 +200,21 @@ function Test() {
         footer {
           grid-area: footer;
           display: flex;
-          justify-content: space-between;
+          justify-content: space-around;
         }
-
-        .space {
-          position: relative;
-          left: calc(calc(140ch - 100vw) / 2);
-          width: 100vw;
+        header figure,
+        footer figure {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .spacer {
           height: 200px;
           margin: 2em 0;
           background: ${themeValues.colorBgAlt};
-        }
-        @media (max-width: 160ch) {
-          .space {
-            left: -13px;
-          }
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
         }
       `}</style>
     </>
