@@ -2,13 +2,20 @@
 import Head from 'next/head';
 import Normalize from './Normalize';
 
-export const themeValues = {
+const themeEarth = {
   colorBlossom: '#338618',
   colorFade: '#5e5e5e',
   colorBg: '#f9f9f9',
   colorBgAlt: '#c7e3be',
-  colorText: '#4a4a4a',
-  fontSizeBase: '16px'
+  colorText: '#4a4a4a'
+};
+
+const themeOcean = {
+  colorBlossom: '#5891E0',
+  colorFade: '#727375',
+  colorBg: '#F7FBFF',
+  colorBgAlt: '#BDD8FF',
+  colorText: '#344761'
 };
 
 export const fontValues = {
@@ -20,14 +27,20 @@ export const fontValues = {
   bodyFontSize: 16
 };
 
+/**
+ *  Holds value of current theme for access in other files
+ */
+export const themeValues = themeOcean;
+
+const fontSizeBase = '16px';
+
 const ThemeStyles = () => {
   const {
     colorBlossom,
     colorFade,
     colorBg,
     colorBgAlt,
-    colorText,
-    fontSizeBase
+    colorText
   } = themeValues;
   const { titleFont, bodyFont } = fontValues;
 
