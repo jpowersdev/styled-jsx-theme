@@ -30,7 +30,14 @@ const Navigation = () => (
       ))}
     </ul>
 
-    <style jsx>{``}</style>
+    <style jsx>{`
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+      }
+    `}</style>
   </nav>
 );
 

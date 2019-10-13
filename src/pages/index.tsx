@@ -40,31 +40,44 @@ const Home = () => {
         </p>
 
         <div className='row'>
-          <a href='https://github.com/zeit/next.js#setup' className='card'>
-            <h3>Getting Started &rarr;</h3>
+          <a href='//github.com/zeit/next.js#setup' className='card'>
+            <h4>Getting Started &rarr;</h4>
             <p>Learn more about Next.js on GitHub and in their examples.</p>
           </a>
 
           <a
-            href='https://github.com/zeit/next.js/tree/master/examples'
+            href='//github.com/zeit/next.js/tree/master/examples'
             className='card'
           >
-            <h3>Examples &rarr;</h3>
+            <h4>Examples &rarr;</h4>
             <p>Find other example boilerplates on the Next.js GitHub.</p>
           </a>
-          <a href='https://github.com/zeit/next.js' className='card'>
-            <h3>Create Next App &rarr;</h3>
+
+          <a href='//github.com/zeit/next.js' className='card'>
+            <h4>Create Next App &rarr;</h4>
             <p>Was this tool helpful? Let us know how we can improve it!</p>
           </a>
         </div>
       </div>
 
       <style jsx>{`
+        .hero {
+          text-align: center;
+        }
+        .row {
+          display: flex;
+          justify-content: space-between;
+        }
+        .row.date {
+          justify-content: center;
+        }
         .card {
+          text-align: left;
           display: block;
           border: 1px solid ${themeValues.colorFade};
           margin: 20px auto 40px;
           padding: 0px 24px 24px;
+          max-width: 25%;
         }
       `}</style>
     </div>

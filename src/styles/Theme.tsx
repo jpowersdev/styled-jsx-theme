@@ -30,7 +30,7 @@ export const fontValues = {
 /**
  *  Holds value of current theme for access in other files
  */
-export const themeValues = themeOcean;
+export const themeValues = themeEarth;
 
 const fontSizeBase = '16px';
 
@@ -51,21 +51,28 @@ const ThemeStyles = () => {
         font-size: 62.5%;
         font-family: ${titleFont};
       }
+      #__next {
+        padding: 13px;
+      }
       body {
         font-size: ${fontSizeBase};
         line-height: 1.618;
-        max-width: 38em;
         margin: auto;
         color: ${colorText};
         background-color: ${colorBg};
-        padding: 13px;
+        position: relative;
       }
-      @media (max-width: 684px) {
+      @media (max-width: 1025px) {
         body {
-          font-size: calc${fontSizeBase} * 0.85);
+          font-size: calc(${fontSizeBase} * 0.95);
         }
       }
-      @media (max-width: 382px) {
+      @media (max-width: 769px) {
+        body {
+          font-size: calc(${fontSizeBase} * 0.85);
+        }
+      }
+      @media (max-width: 426px) {
         body {
           font-size: calc(${fontSizeBase} * 0.75);
         }
@@ -88,21 +95,21 @@ const ThemeStyles = () => {
         -webkit-hyphens: auto;
         hyphens: auto;
       }
-      /* Perfect Fourth https://type-scale.com/ */
+      /* https://type-scale.com/ */
       h1 {
-        font-size: 4.209em;
+        font-size: 3.052em;
       }
       h2 {
-        font-size: 3.157em;
+        font-size: 2.441em;
       }
       h3 {
-        font-size: 2.369em;
+        font-size: 1.953em;
       }
       h4 {
-        font-size: 1.777em;
+        font-size: 1.563em;
       }
       h5 {
-        font-size: 1.333em;
+        font-size: 1.25em;
       }
       h6 {
         font-size: 1em;
@@ -137,6 +144,13 @@ const ThemeStyles = () => {
       img {
         max-width: 100%;
       }
+
+      /* Navigation */
+      nav > ul {
+        padding-right: 1.4em;
+        list-style-type: none;
+      }
+
       /* Pre and Code */
       pre {
         background-color: ${colorBgAlt};
@@ -155,6 +169,7 @@ const ThemeStyles = () => {
         background-color: transparent;
         white-space: pre;
       }
+
       /* Tables */
       table {
         text-align: justify;
@@ -166,6 +181,7 @@ const ThemeStyles = () => {
         padding: 0.5em;
         border-bottom: 1px solid ${colorBgAlt};
       }
+
       /* Buttons, forms and input */
       input,
       textarea {
@@ -251,6 +267,14 @@ const ThemeStyles = () => {
         display: block;
         margin-bottom: 0.5rem;
         font-weight: 600;
+      }
+
+      /* Custom HTML5 */
+      figure {
+        margin: 0;
+      }
+      figcaption {
+        font-weight: 700;
       }
     `}</style>
   );
