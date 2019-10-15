@@ -108,8 +108,7 @@ function Index() {
           </article>
         </section>
       </main>
-
-      <ContactForm />
+      {/* <ContactForm /> */}
       <footer>
         <figure>
           <img src='/static/favicon.ico' alt='logo' />
@@ -135,15 +134,13 @@ function Index() {
       </footer>
       <style jsx>{`
         :global(#__next) {
-          max-width: 140ch;
-          margin: 0 auto;
           display: grid;
           grid-template-columns: 35ch auto;
           grid-auto-rows: auto;
-          grid-template-areas: 'header header' 'aside main' '. .' 'footer footer';
         }
         header {
-          grid-area: header;
+          grid-column: 1 / 3;
+          grid-row: 1;
           text-align: center;
         }
         header > nav > ul {
@@ -151,19 +148,19 @@ function Index() {
           align-items: center;
           justify-content: space-around;
         }
-        aside > nav > ul {
-          padding-left: 0;
-        }
         aside {
-          grid-area: aside;
+          grid-column: 1 / 2;
+          grid-row: 2;
           padding: 2ch;
         }
         main {
-          grid-area: main;
+          grid-column: 2 / 3;
+          grid-row: 2;
           padding: 2ch;
         }
         footer {
-          grid-area: footer;
+          grid-column: 1 / 3;
+          grid-row: span -1;
           display: flex;
           justify-content: space-around;
         }

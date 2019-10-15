@@ -154,8 +154,10 @@ const ThemeStyles = () => {
       }
 
       /* Navigation */
-      nav > ul {
-        padding-right: 1.4em;
+      header ul,
+      aside ul,
+      footer ul {
+        padding-left: 0;
         list-style-type: none;
       }
 
@@ -286,13 +288,9 @@ const ThemeStyles = () => {
       }
       .fullwidth {
         position: relative;
-        left: calc(calc(140ch - 100vw) / 2);
+        left: 0;
         width: 100vw;
-      }
-      @media (max-width: 154ch) {
-        .fullwidth {
-          left: 0;
-        }
+        grid-column: 1 / 3;
       }
     `}</style>
   );
